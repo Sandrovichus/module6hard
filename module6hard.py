@@ -80,7 +80,7 @@ class Triangle(Figure):
         elif len(sides) != 3:
             super().__init__(color, *sides)
         else:
-            print('Треугольника с такими сторонами не существует')
+            print(f'Нельзя создать треугольник со сторонами {list(sides)}')
 
     def get_hight(self) -> list:
         return self.__height
@@ -90,7 +90,7 @@ class Triangle(Figure):
             super().set_sides(*new_sides)
             self.__height = height_triangle(*new_sides)
         else:
-            print('Треугольника с такими сторонами не существует')
+            print(f'Нельзя создать треугольник со сторонами {list(new_sides)}')
 
     def get_square(self) -> float:
         p = len(self) / 2
@@ -181,8 +181,10 @@ if __name__ == '__main__':
     print(circle2.get_sides())
     print(f'Площадь круга с длиной окружности {len(circle2)} равен: {circle2.get_square()}')
     print(f'Радиус круга с длиной окружности {len(circle2)} равен: {circle2.get_radius()}')
-    triangle1.set_sides(1, 2, 4)  # на печать выведет сообщение, что такого треугольника не существует
+    triangle1.set_sides(1, 2, 4)  # на печать выведет сообщение, что нельзя создать треугольник с такими сторонами
     triangle1.set_sides(3, 4, 5)
     print(f'Площадь треугольника со сторонами {triangle1.get_sides()} равна: {triangle1.get_square()}')
     print(f'Высоты треугольника со сторонами {triangle1.get_sides()} равны: {triangle1.get_hight()}')
     print(f'Периметр треугольника со сторонами {triangle1.get_sides()} равен: {len(triangle1)}')
+    tr = Triangle((100, 100, 100), 1, 1, 3)  # на печать выведет сообщение, что нельзя создать треугольник с такими
+    # сторонами
