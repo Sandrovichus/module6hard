@@ -10,7 +10,7 @@ class Figure:
         if len(sides) == self.sides_count:
             self.__sides = list(sides)
         else:
-            self.__sides = [1 for i in range(self.sides_count)]
+            self.__sides = [1] * self.sides_count
         if self.is_valid_color(*color):
             self.__color = list(color)
             self.filled = True
@@ -82,7 +82,7 @@ class Triangle(Figure):
         else:
             print(f'Нельзя создать треугольник со сторонами {list(sides)}')
 
-    def get_hight(self) -> list:
+    def get_height(self) -> list:
         return self.__height
 
     def set_sides(self, *new_sides: int):
@@ -184,7 +184,7 @@ if __name__ == '__main__':
     triangle1.set_sides(1, 2, 4)  # на печать выведет сообщение, что нельзя создать треугольник с такими сторонами
     triangle1.set_sides(3, 4, 5)
     print(f'Площадь треугольника со сторонами {triangle1.get_sides()} равна: {triangle1.get_square()}')
-    print(f'Высоты треугольника со сторонами {triangle1.get_sides()} равны: {triangle1.get_hight()}')
+    print(f'Высоты треугольника со сторонами {triangle1.get_sides()} равны: {triangle1.get_height()}')
     print(f'Периметр треугольника со сторонами {triangle1.get_sides()} равен: {len(triangle1)}')
     tr = Triangle((100, 100, 100), 1, 1, 3)  # на печать выведет сообщение, что нельзя создать треугольник с такими
     # сторонами
